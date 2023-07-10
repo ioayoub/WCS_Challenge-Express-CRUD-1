@@ -1,36 +1,27 @@
-import Counter from "../components/Counter";
-import logo from "../assets/logo.svg";
+import { Link, Outlet } from "react-router-dom";
 
-export default function Home() {
+function Home() {
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="flex flex-col items-center justify-centerbg-gray-100">
+      <h1 className="text-4xl font-bold text-gray-900 my-16">
+        FullStack CRUD Challenge
+      </h1>
+      <div className="flex flex-row gap-8">
+        <Link
+          to="/post/create"
+          className="px-4 py-2 my-8 text-white bg-blue-500 rounded-lg hover:bg-blue-700 focus:outline-none focus:bg-blue-700"
         >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
+          Créer un post
+        </Link>
+        <Link
+          to="/post/read"
+          className="px-4 py-2 my-8 text-white bg-blue-500 rounded-lg hover:bg-blue-700 focus:outline-none focus:bg-blue-700"
         >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+          Afficher tous les posts
+        </Link>
+      </div>
+      <Outlet />
+    </div>
   );
 }
+export default Home;
