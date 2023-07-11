@@ -6,8 +6,9 @@ CREATE TABLE item (
 INSERT INTO item (title) VALUES ('Stuff'), ('Doodads');
 
 CREATE TABLE post (
-  id int AUTO_INCREMENT NOT NULL,
-  title varchar(255) NOT NULL,
-  content text NOT NULL,
-  created_at DEFAULT CURRENT_TIMESTAMP,
-)
+  `id` int AUTO_INCREMENT NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `created_at` DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY(`id`)
+);
