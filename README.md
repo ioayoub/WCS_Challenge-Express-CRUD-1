@@ -1,55 +1,51 @@
-⚠️ [Original template](https://github.com/WildCodeSchool/js-template-fullstack/)
+### Avant de commencer
 
-## Concept
+- Pensez à installer votre projet avec le package de votre choix.
+- Faites votre choix : `npm`, `yarn`, `pnpm`
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+### Instructions du challenge : 
 
-## Setup & Use
+Lorsque vous lancez le projet avec 
 
-### Windows users
-
-Be sure to run these commands in a git terminal to avoid [issues with newline formats](https://en.wikipedia.org/wiki/Newline#Issues_with_different_newline_formats):
-
-```
-git config --global core.eol lf
-git config --global core.autocrlf false
+```js
+pnpm run dev
 ```
 
-### Project Initialization
+Vous arrivez sur la page d’accueil (Home.jsx)
 
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
-- Clone this repo, enter it
-- If you are using `yarn` or `pnpm`, adapt the `config/cli` in `package.json`
-- Run command `npm install`
-- _NB: To launch the backend server, you'll need an environment file with database credentials. You'll find a template one in `backend/.env.sample`_
+![image](https://github.com/ioayoub/WCS_Challenge-Express-CRUD-1-correction/assets/66207978/41fdb3fd-20c0-44a0-ba87-2ecc3a300761)
 
-### Available Commands
+Lorsque vous cliquez sur “Créer un post”, un formulaire s’affiche.
 
-- `migrate` : Run the database migration script
-- `dev` : Starts both servers (frontend + backend) in one terminal
-- `dev-front` : Starts the React frontend server
-- `dev-back` : Starts the Express backend server
-- `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
-- `fix` : Fixes linter errors (run it if `lint` growls on your code !)
+**Pensez à vous baser sur la logique en place concernant les “Items” dans le dossier BACKEND.**
 
-## FAQ
+## Exercice n°1 
 
-### Tools
+Mettez en place la logique dans REACT pour soumettre les informations saisies dans ce formulaire.
 
-- _Concurrently_ : Allows for several commands to run concurrently in the same CLI
-- _Husky_ : Allows to execute specific commands that trigger on _git_ events
-- _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
-- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
-- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
-- _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
-- _Nodemon_ : Allows to restart the server everytime a .js file is udated
+![image](https://github.com/ioayoub/WCS_Challenge-Express-CRUD-1-correction/assets/66207978/383fe207-383c-4ced-8da9-ccb36c8dbc8a)
 
-### Deployment
+## Exercice n°2 
 
-For deployment, you have to go to `secrets` → app `actions` on the github repo to insert via `New repository secret` :
+Récupérez les informations saisies et les envoyer vers votre backend.
 
-- CAPROVER_BACK_APPNAME : name app on caprover
-- CAPROVER_FRONT_APPNAME : name app on caprover
-- CAPROVER_PASSWORD : password caprover
-- CAPROVER_SERVER : link of domain
+- Définissez un nouveau fichiers dans le dossier “routers” pour réorienter toutes les requêtes liées aux routes “/post”
+- Créez votre base de données et alimentez le fichier .env (vous pouvez vous servir du fichier database.sql situé à la racine de votre dossier backend.
+- Créez un controller “postControllers.js” qui contiendra la logique permettant de créer un nouveau post.
+- Dans le fichier PostManager, créez une nouvelle fonction permettant d’intéragir avec votre base de données afin d’insérer les données récupérées.
+
+## Exercice n°3 
+
+Mettez en place la logique REACT pour récupérer TOUS les post lors du clic sur le bouton “Afficher tous les posts” ainsi que la logique backend afin de récupérer toutes les entrées disponibles.
+
+## Exercice n°4
+
+Mettez en place la logique REACT pour récupérer UN post lors du clic sur le bouton “Détails” ainsi que la logique BACKEND permettant cette interaction.
+
+## BONUS n°1 
+
+Mettez en place la logique Frontend/Backend afin de SUPPRIMER un post depuis la liste des posts.
+
+## BONUS°2
+
+Mettez en place la logique Frontend/Backend afin de MODIFIER un post depuis la liste des posts.
